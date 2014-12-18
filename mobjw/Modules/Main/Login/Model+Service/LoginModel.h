@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface LoginModel : NSObject
 
-- (void)loginWithUsername:(NSString *)username password:(NSString *)password completion:(void (^)(NSError *error))completionBlock;
+- (void)linkWithDropboxFromViewController:(UIViewController *)vc completion:(void (^)(NSError *error))completionBlock;
 
 @end

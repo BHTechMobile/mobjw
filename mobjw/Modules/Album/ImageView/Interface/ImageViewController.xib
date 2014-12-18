@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewController">
+            <connections>
+                <outlet property="_audioButton" destination="4hh-tJ-cDr" id="crt-k4-UBN"/>
+                <outlet property="_locationLabel" destination="kJ7-cN-eei" id="xlN-GC-ar9"/>
+                <outlet property="_noteButton" destination="rBp-3k-dTf" id="IHB-pO-pzq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocationLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJ7-cN-eei">
+                    <rect key="frame" x="8" y="8" width="584" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="jBG-Ko-4hu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hh-tJ-cDr">
+                    <rect key="frame" x="8" y="562" width="284" height="30"/>
+                    <state key="normal" title="Audio">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="audioButtonPressed:" destination="-1" eventType="touchUpInside" id="EjK-u8-Fl7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBp-3k-dTf">
+                    <rect key="frame" x="308" y="562" width="284" height="30"/>
+                    <state key="normal" title="Note">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="noteButtonPressed:" destination="-1" eventType="touchUpInside" id="0gj-Ql-lfM"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D0b-w4-aaT">
+                    <rect key="frame" x="0.0" y="48" width="600" height="506"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="kJ7-cN-eei" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="1IV-uk-e5Z"/>
+                <constraint firstAttribute="trailing" secondItem="kJ7-cN-eei" secondAttribute="trailing" constant="8" id="4oC-7F-9mv"/>
+                <constraint firstItem="D0b-w4-aaT" firstAttribute="top" secondItem="kJ7-cN-eei" secondAttribute="bottom" constant="8" id="6wr-Ey-dX9"/>
+                <constraint firstItem="4hh-tJ-cDr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="AL2-ah-lf0"/>
+                <constraint firstItem="kJ7-cN-eei" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="AbK-T8-MqQ"/>
+                <constraint firstAttribute="bottom" secondItem="4hh-tJ-cDr" secondAttribute="bottom" constant="8" id="CC2-ys-nHI"/>
+                <constraint firstItem="rBp-3k-dTf" firstAttribute="leading" secondItem="4hh-tJ-cDr" secondAttribute="trailing" constant="16" id="EFx-BY-13G"/>
+                <constraint firstItem="D0b-w4-aaT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FX7-6u-EvZ"/>
+                <constraint firstAttribute="trailing" secondItem="D0b-w4-aaT" secondAttribute="trailing" id="H3U-Mr-J6d"/>
+                <constraint firstAttribute="centerX" secondItem="kJ7-cN-eei" secondAttribute="centerX" id="HQk-r9-L62"/>
+                <constraint firstItem="4hh-tJ-cDr" firstAttribute="top" secondItem="D0b-w4-aaT" secondAttribute="bottom" constant="8" id="dI5-lg-Ojt"/>
+                <constraint firstAttribute="trailing" secondItem="rBp-3k-dTf" secondAttribute="trailing" constant="8" id="gtS-pc-RPE"/>
+                <constraint firstItem="4hh-tJ-cDr" firstAttribute="width" secondItem="rBp-3k-dTf" secondAttribute="width" id="hPk-hL-tDI"/>
+                <constraint firstAttribute="bottom" secondItem="rBp-3k-dTf" secondAttribute="bottom" constant="8" id="yvq-rp-NPT"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

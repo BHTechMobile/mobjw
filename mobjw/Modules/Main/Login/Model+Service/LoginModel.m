@@ -7,18 +7,34 @@
 //
 
 #import "LoginModel.h"
+#import "DropboxServices.h"
 
 @implementation LoginModel
 
-- (void)loginWithUsername:(NSString *)username password:(NSString *)password completion:(void (^)(NSError *error))completionBlock
+- (void)linkWithDropboxFromViewController:(UIViewController *)vc completion:(void (^)(NSError *error))completionBlock
 {
-    if (username != nil && password != nil && completionBlock != nil )
+    if (completionBlock != nil )
     {
-        completionBlock([NSError errorWithDomain:@"LoginDomain" code:0 userInfo:[NSDictionary dictionaryWithObject:@"Cannot login" forKey:NSLocalizedDescriptionKey]]);
+        [[DropboxServices sharedServices] startSessionFromViewController:vc success:^{
+            NSLog(@"Dropbox log on succeeded");
+            completionBlock(nil);
+        } failure:^(NSError * error) {
+            if (error != nil)
+            {
+                NSLog(@"Dropbox log on failed with error : %@",error);
+                completionBlock(error);
+            }
+            else
+            {
+                /* Dropbox view - cancel pressed , error is nil */
+                NSLog(@"Dropbox log on failed with unkown error");
+                completionBlock([NSError errorWithDomain:@"MainDomain" code:0 userInfo:[NSDictionary dictionaryWithObject:@"Unknown Error" forKey:NSLocalizedDescriptionKey]]);
+            }
+        }];
     }
     else
     {
-        NSLog(@"loginWithUsername:password:completion: Invalid input");
+        NSLog(@"linkWithDropboxFromViewController:completion: Invalid input");
     }
 }
 

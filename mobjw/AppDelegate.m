@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <DropboxSDK/DropboxSDK.h>
+#import "DropboxServices.h"
 #import "LoginViewController.h"
 
 @interface AppDelegate ()
@@ -48,4 +50,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
++ (instancetype)sharedAppDelegate
+{
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    if ([[DBSession sharedSession] handleOpenURL:url]) {
+        [[DropboxServices sharedServices] updateSessionBlocks];
+        return YES;
+    }
+    
+    return NO;
+}
 @end

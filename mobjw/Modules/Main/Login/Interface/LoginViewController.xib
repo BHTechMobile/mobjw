@@ -6,8 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
-                <outlet property="_passTextField" destination="9bg-bZ-Eyo" id="Aad-RA-EA4"/>
-                <outlet property="_userTextField" destination="YDO-be-Kit" id="IwV-vQ-9NL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,38 +14,22 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YDO-be-Kit">
-                    <rect key="frame" x="24" y="87" width="552" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3U-9Z-8Y9">
-                    <rect key="frame" x="24" y="187" width="552" height="30"/>
-                    <state key="normal" title="Login">
+                    <rect key="frame" x="24" y="184" width="552" height="30"/>
+                    <state key="normal" title="Login Dropbox">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="loginPressed:" destination="-1" eventType="touchUpInside" id="039-VS-8Lh"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bg-bZ-Eyo">
-                    <rect key="frame" x="24" y="137" width="552" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="YDO-be-Kit" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="87" id="3qu-yP-5iW"/>
-                <constraint firstAttribute="trailing" secondItem="YDO-be-Kit" secondAttribute="trailing" constant="24" id="9cW-aQ-wZA"/>
-                <constraint firstItem="9bg-bZ-Eyo" firstAttribute="width" secondItem="YDO-be-Kit" secondAttribute="width" id="AAL-rb-Jbp"/>
-                <constraint firstItem="y3U-9Z-8Y9" firstAttribute="top" secondItem="9bg-bZ-Eyo" secondAttribute="bottom" constant="20" id="DFA-BL-NwL"/>
-                <constraint firstItem="9bg-bZ-Eyo" firstAttribute="top" secondItem="YDO-be-Kit" secondAttribute="bottom" constant="20" id="Fan-v6-OUR"/>
-                <constraint firstItem="YDO-be-Kit" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="HL3-PQ-HVk"/>
-                <constraint firstItem="y3U-9Z-8Y9" firstAttribute="width" secondItem="YDO-be-Kit" secondAttribute="width" id="JJb-5S-ViM"/>
-                <constraint firstItem="9bg-bZ-Eyo" firstAttribute="centerX" secondItem="YDO-be-Kit" secondAttribute="centerX" id="iFj-IW-hQL"/>
-                <constraint firstAttribute="centerX" secondItem="YDO-be-Kit" secondAttribute="centerX" id="pFs-FT-Vxr"/>
-                <constraint firstItem="y3U-9Z-8Y9" firstAttribute="centerX" secondItem="YDO-be-Kit" secondAttribute="centerX" id="wh1-E2-P1D"/>
+                <constraint firstAttribute="centerX" secondItem="y3U-9Z-8Y9" secondAttribute="centerX" id="5n8-rV-Tsy"/>
+                <constraint firstAttribute="trailing" secondItem="y3U-9Z-8Y9" secondAttribute="trailing" constant="24" id="OVI-Xf-jLT"/>
+                <constraint firstItem="y3U-9Z-8Y9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="184" id="rYq-t3-Ebw"/>
+                <constraint firstItem="y3U-9Z-8Y9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="xF5-UG-9dV"/>
             </constraints>
         </view>
     </objects>

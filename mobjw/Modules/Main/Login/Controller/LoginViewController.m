@@ -8,24 +8,25 @@
 
 #import "LoginViewController.h"
 #import "LoginModel.h"
+#import "LoginWireframe.h"
+
+#import "DropboxServices.h"
 
 @interface LoginViewController ()
 {
     LoginModel* _mmodel;
+    LoginWireframe* _wireframe;
 }
 
 @end
 
 @implementation LoginViewController
-{
-    __weak IBOutlet UITextField *_userTextField;
-    __weak IBOutlet UITextField *_passTextField;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _mmodel = [[LoginModel alloc] init];
+    _wireframe = [[LoginWireframe alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,18 +45,8 @@
 */
 - (IBAction)loginPressed:(id)sender
 {
-    NSString* user = @"";
-    NSString* pass = @"";
-    
-    if (_userTextField.text != nil) {
-        user = _userTextField.text;
-    }
-    if (_passTextField.text != nil) {
-        pass = _passTextField.text;
-    }
-    
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-       [_mmodel loginWithUsername:user password:pass completion:^(NSError *error) {
+       [_mmodel linkWithDropboxFromViewController:self completion:^(NSError *error) {
            if (error != nil)
            {
                dispatch_async(dispatch_get_main_queue(), ^{
@@ -66,6 +57,7 @@
            {
                dispatch_async(dispatch_get_main_queue(), ^{
                    /* login success */
+                   [_wireframe loginSuccessFromLoginView:self];
                });
            }
        }];
